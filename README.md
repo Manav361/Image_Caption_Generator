@@ -46,11 +46,11 @@ To use this image caption generator, follow these steps:
 
 - Evaluation: Evaluate the model's performance on a validation set and generate captions for new images.
 
-## Data Preprocessing
+## DataPreprocessing
 
 The data preprocessing step involves reading the captions.txt file, tokenizing captions, and splitting the data into training and validation sets. The captions are preprocessed to remove special characters, convert text to lowercase, and add start and end tokens for sequence generation.
 
-## Model Architecture
+## Model_Architecture
 
 The image captioning model uses a transformer-based architecture, consisting of an image encoder and a caption decoder. The image encoder is based on a pre-trained InceptionV3 model, which extracts features from input images. The caption decoder is a transformer decoder layer that generates textual captions.
 
