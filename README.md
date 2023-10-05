@@ -1,54 +1,78 @@
 # Image Caption Generator
 
-This project is an Image Caption Generator that generates textual descriptions for images. It uses a combination of deep learning models, including Convolutional Neural Networks (CNNs) and Transformers, to achieve this.
-
-![Image Caption Generator Demo](demo.gif)
+This project is an implementation of an image caption generator using TensorFlow. It takes an image as input and generates a textual caption describing the contents of the image. The project consists of several components, including data preprocessing, model architecture, training, and evaluation.
 
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Features](#features)
-- [Demo](#demo)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
+- [Requirements](#Requirements)
+- [Usage](#Usage)
+- [Data Preprocessing](#DataPreprocessing)
+- [Model Architecture](#Model_Architecture)
+- [Training](#Training)
+- [Evaluation](#Evaluation)
+- [Conclusion](#Conclusion)
+- [References](#References)
 
 ## Introduction
 
-The Image Caption Generator is a project that aims to automatically generate descriptive captions for images. It uses a deep learning approach, combining CNNs to extract image features and Transformers to generate text-based captions. This can be particularly useful for applications like image indexing, accessibility, and more.
+Image captioning is the process of generating a natural language description of an image. It combines computer vision and natural language processing techniques to enable machines to understand and describe visual content.
 
-## Features
+This project utilizes a transformer-based architecture for image captioning. It involves training a deep learning model to learn the relationship between images and their corresponding textual descriptions. The model is trained on a dataset of images and their associated captions.
 
-- Automatic generation of textual captions for images.
-- Integration of Convolutional Neural Networks (CNNs) and Transformers.
-- Flexibility to work with various image datasets.
-- Easy-to-use API for generating captions from images.
+## Requirements
 
-## Demo
+Before running this project, ensure you have the following dependencies installed:
 
-You can see the Image Caption Generator in action in the following demo:
-
-![Demo GIF](demo.gif)
-
-## Getting Started
-
-To get started with the Image Caption Generator, follow the steps below:
-
-### Prerequisites
-
-Before you begin, ensure you have the following prerequisites:
-
-- Python 3.x
 - TensorFlow
-- Pillow
+- NumPy
 - Matplotlib
 - Pandas
+- Pillow (PIL)
+- tqdm
+- requests
+You can install these packages using pip:
+pip install tensorflow numpy matplotlib pandas pillow tqdm requests
 
-### Installation
+## Usage
+
+To use this image caption generator, follow these steps:
+
+- Prepare your dataset: Organize your dataset with images and corresponding captions. The dataset should have a file named captions.txt, where each line contains image information and captions in the format image_name|caption_number|caption_text.
+
+- Data Preprocessing: Run the data preprocessing code to prepare the dataset for training. This code will tokenize the captions, preprocess text, and split the data into training and validation sets.
+
+- Model Training: Train the image captioning model using the preprocessed dataset. The model architecture is based on the Transformer architecture, which is well-suited for sequence-to-sequence tasks like image captioning.
+
+- Evaluation: Evaluate the model's performance on a validation set and generate captions for new images.
+
+## Data Preprocessing
+
+The data preprocessing step involves reading the captions.txt file, tokenizing captions, and splitting the data into training and validation sets. The captions are preprocessed to remove special characters, convert text to lowercase, and add start and end tokens for sequence generation.
+
+## Model Architecture
+
+The image captioning model uses a transformer-based architecture, consisting of an image encoder and a caption decoder. The image encoder is based on a pre-trained InceptionV3 model, which extracts features from input images. The caption decoder is a transformer decoder layer that generates textual captions.
+
+
+## Training
+The training process involves feeding the preprocessed data into the model and optimizing the model's weights using an Adam optimizer. The model is trained for a specified number of epochs, with early stopping to prevent overfitting.
+
+## Evaluation
+The model's performance is evaluated on a validation set using metrics such as loss and accuracy. Additionally, you can use the trained model to generate captions for new images.
+
+## Conclusion
+This image caption generator project demonstrates the use of deep learning and transformers to automatically generate textual descriptions for images. It can be used in various applications, such as image indexing, content retrieval, and accessibility for visually impaired individuals.
+
+## References
+
+- [TensorFlow](https://www.tensorflow.org/)
+- [InceptionV3](https://keras.io/api/applications/inceptionv3/)
+- [Transformer Architecture](https://www.tensorflow.org/text/tutorials/transformer)
+- [Early Stopping](https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/EarlyStopping)
+
+
+For more information and detailed code implementation, refer to the provided code files.
 
 
 
